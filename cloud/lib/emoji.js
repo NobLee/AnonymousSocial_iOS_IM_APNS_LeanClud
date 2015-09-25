@@ -214,6 +214,7 @@ function emoji(){}
 		// native modes next.
 		// for variations selectors, we just need to output them raw, which `extra` will contain.
 		emoji.init_env();
+         console.log('emoji--------------------------'+emoji.replace_mode);
 		if (emoji.replace_mode == 'unified'  && emoji.allow_native && emoji.data[idx][0][0]) return emoji.data[idx][0][0] + extra;
 		if (emoji.replace_mode == 'softbank' && emoji.allow_native && emoji.data[idx][1]) return emoji.data[idx][1] + extra;
 		if (emoji.replace_mode == 'google'   && emoji.allow_native && emoji.data[idx][2]) return emoji.data[idx][2] + extra;

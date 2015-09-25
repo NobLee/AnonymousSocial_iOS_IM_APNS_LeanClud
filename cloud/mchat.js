@@ -13,7 +13,7 @@ var msgTypeEmotion = 1;
 function getMsgDesc(msg) {
   var type = msg._lctype;
   if (type == msgTypeText) {
-    return emoji.replace_emoticons(msg._lctext);
+    return emoji.replace_colons(msg._lctext);
   } else if (type == msgTypeImage) {
     return "[图片]";
   } else if (type == msgTypeAudio) {
