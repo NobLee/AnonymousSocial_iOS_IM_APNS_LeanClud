@@ -1,5 +1,7 @@
 //iOS 消息推送
 
+var emoji = require('lib/emoji.js');
+
 var msgTypeText = -1;
 var msgTypeImage = -2;
 var msgTypeAudio = -3;
@@ -11,7 +13,7 @@ var msgTypeEmotion = 1;
 function getMsgDesc(msg) {
   var type = msg._lctype;
   if (type == msgTypeText) {
-    return msg._lctext;
+    return emoji.replace_colons(msg._lctext);
   } else if (type == msgTypeImage) {
     return "[图片]";
   } else if (type == msgTypeAudio) {
