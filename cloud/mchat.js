@@ -1,6 +1,6 @@
 //iOS 消息推送
 
-var emoji = require('lib/emoji.js');
+var emoji = require('cloud/lib/emoji.js');
 
 var msgTypeText = -1;
 var msgTypeImage = -2;
