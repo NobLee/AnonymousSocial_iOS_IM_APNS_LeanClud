@@ -86,7 +86,7 @@ function getAPNSPushMessage(params,userName) {
   }
 //  if (msg._lcattrs && msg._lcattrs.dev) {
     //设置证书，开发时用 dev，生产环境不设置
-//    json._profile = "dev";
+    json._profile = "dev";
 //  }
   return JSON.stringify(json);
 }
