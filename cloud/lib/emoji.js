@@ -323,7 +323,7 @@ function emoji(){}
 	emoji.init_env = function(){
 		if (emoji.inits.env) return;
 		emoji.inits.env = 1;
-		emoji.replace_mode = 'img';
+		emoji.replace_mode = 'undefined';
 		emoji.supports_css = false;
 		if (typeof(navigator) !== 'undefined') {
 			var ua = navigator.userAgent;
