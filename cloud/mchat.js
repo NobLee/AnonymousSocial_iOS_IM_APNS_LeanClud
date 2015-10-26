@@ -34,10 +34,8 @@ function receiversOffline(req, res) {
     // api v2
     try{
         sendAPNSMessage(req,res);
-        console.log('4--------------------------');
     } catch(err) {
       // json parse error
-     console.log('5--------------------------'+err);
       res.success();
     }
   } else {
@@ -48,7 +46,6 @@ function receiversOffline(req, res) {
 //发送推送消息
 function sendAPNSMessage(req, res){
     var params = req.params;
-    console.log('6--------------------------');
     var q = new AV.Query('_Conversation');
     q.equalTo ('objectId', params.convId);
     q.limit (1);
@@ -59,12 +56,10 @@ function sendAPNSMessage(req, res){
         var dict = results[0].get('attr');
         var username = dict[params.fromPeer]['username']
         var pushMessage = getAPNSPushMessage(req.params,username);
-        console.log('1--------------------------'+username+pushMessage);
         res.success({pushMessage: pushMessage});
     },
     error: function(error) {
         // error is an instance of AV.Error.
-        console.log('2--------------------------');
         res.success();
     }
     });
@@ -88,7 +83,7 @@ function getAPNSPushMessage(params,userName) {
   }
 //  if (msg._lcattrs && msg._lcattrs.dev) {
     //设置证书，开发时用 dev，生产环境不设置
-    json._profile = "dev";
+//    json._profile = "dev";
 //  }
   return JSON.stringify(json);
 }
